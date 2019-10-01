@@ -18,11 +18,10 @@ public class TileNavNode : MonoBehaviour {
 
     public NodeType thisNodesType;
     public bool comeToStop = false;
-    public TileNavNode[] nextNode;
-    public TileNavNode[] prevNode;
     public AdjacentTileLinkDirection nextNodeLinker;
+    public TileNavNode[] nextNode;
     public AdjacentTileLinkDirection prevNodeLinker;
-
+    public TileNavNode[] prevNode;
 
     private void OnDrawGizmos() {
         if (Application.isPlaying == false) {
