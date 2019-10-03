@@ -18,9 +18,9 @@ public class TileNavNode : MonoBehaviour {
 
     public NodeType thisNodesType;
     public bool comeToStop = false;
-    public AdjacentTileLinkDirection nextNodeLinker;
+    public AdjacentTileLinkDirection nextTileLinker;
     public TileNavNode[] nextNode;
-    public AdjacentTileLinkDirection prevNodeLinker;
+    public AdjacentTileLinkDirection prevTileLinker;
     public TileNavNode[] prevNode;
 
     private void OnDrawGizmos() {
@@ -43,8 +43,8 @@ public class TileNavNode : MonoBehaviour {
             prevNode = new TileNavNode[1];
         }
 
-        nextNodeLinker = LinkerRotator(nextNodeLinker, rot);
-        prevNodeLinker = LinkerRotator(prevNodeLinker, rot);
+        nextTileLinker = LinkerRotator(nextTileLinker, rot);
+        prevTileLinker = LinkerRotator(prevTileLinker, rot);
     }
 
     AdjacentTileLinkDirection LinkerRotator(AdjacentTileLinkDirection dir, int rot) {
