@@ -72,11 +72,11 @@ public class Tile : MonoBehaviour {
 
     public void LinkEdgeNodes() {
         for (int i = 0; i < navNodes.Length; i++) {
-            if (navNodes[i].nextNodeLinker != AdjacentTileLinkDirection.NONE) {
-                navNodes[i].nextNode[0] = RetrieveAdjacentTilesEdgeNode(navNodes[i].nextNodeLinker, navNodes[i].thisNodesType, true);
+            if (navNodes[i].nextTileLinker != AdjacentTileLinkDirection.NONE) {
+                navNodes[i].nextNode[0] = RetrieveAdjacentTilesEdgeNode(navNodes[i].nextTileLinker, navNodes[i].thisNodesType, true);
             }
-            if (navNodes[i].prevNodeLinker != AdjacentTileLinkDirection.NONE) {
-                navNodes[i].prevNode[0] = RetrieveAdjacentTilesEdgeNode(navNodes[i].prevNodeLinker, navNodes[i].thisNodesType, false);
+            if (navNodes[i].prevTileLinker != AdjacentTileLinkDirection.NONE) {
+                navNodes[i].prevNode[0] = RetrieveAdjacentTilesEdgeNode(navNodes[i].prevTileLinker, navNodes[i].thisNodesType, false);
             }
         }
     }
@@ -115,13 +115,13 @@ public class Tile : MonoBehaviour {
     public TileNavNode SupplyEdgeNode(AdjacentTileLinkDirection direction, NodeType type, bool next) {
         if (next == true) {
             for (int i = 0; i < navNodes.Length; i++) {
-                if (navNodes[i].prevNodeLinker == direction && navNodes[i].thisNodesType == type) {
+                if (navNodes[i].prevTileLinker == direction && navNodes[i].thisNodesType == type) {
                     return navNodes[i];
                 }
             }
         } else {
             for (int i = 0; i < navNodes.Length; i++) {
-                if (navNodes[i].nextNodeLinker == direction && navNodes[i].thisNodesType == type) {
+                if (navNodes[i].nextTileLinker == direction && navNodes[i].thisNodesType == type) {
                     return navNodes[i];
                 }
             }
