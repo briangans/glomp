@@ -26,7 +26,7 @@ public class Vehicle : MonoBehaviour {
 
     private CameraManager cameraManager;
     private FootstepsManager footstepsManager;
-    private BoxCollider boxCollider;
+    //private BoxCollider boxCollider;
 
     private enum VehicleState {
         PATHING = 0,
@@ -45,8 +45,8 @@ public class Vehicle : MonoBehaviour {
 
         cameraManager = GameObject.Find("/Main Camera").GetComponent<CameraManager>();
         footstepsManager = GameObject.Find("/GameMaster").GetComponent<FootstepsManager>();
-        boxCollider = gameObject.GetComponent<BoxCollider>();
-        boxCollider.isTrigger = true;
+        //boxCollider = gameObject.GetComponent<BoxCollider>();
+        //boxCollider.isTrigger = true;
 
         currentState = VehicleState.PATHING;
     }

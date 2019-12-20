@@ -41,7 +41,7 @@ public class Tile : MonoBehaviour {
             crushed.SetActive(false);
         }
         currentState = tileState.NORMAL;
-        cameraManager = FindObjectOfType<CameraManager>();
+        cameraManager = GameObject.Find("/Main Camera").GetComponent<CameraManager>();
     }
 
     // Glomped on by finger touch
