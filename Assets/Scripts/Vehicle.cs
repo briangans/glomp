@@ -73,7 +73,7 @@ public class Vehicle : MonoBehaviour {
 
     void Update () {
         if (currentState == VehicleState.WAITING) {
-            // If intersection is empty
+            // WIP: Check if intersection is empty
             currentState = VehicleState.PATHING;
         }
 
